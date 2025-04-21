@@ -1,0 +1,21 @@
+// components/RoomList.js
+import React from 'react';
+import Link from 'next/link';
+
+const RoomList = () => {
+  const rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5']; // Пример списка комнат
+
+  return (
+    <ul style={{ listStyle: 'none', padding: 0 }}>
+      {rooms.map((room, index) => (
+        <li key={index} style={{ marginBottom: '10px' }}>
+          <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
+            {room}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default RoomList;
