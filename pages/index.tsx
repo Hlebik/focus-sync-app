@@ -1,19 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Home = () => {
-  const rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5']; // Пример комнат
+const RoomList = () => {
+  const rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5'];  // Пример списка комнат
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Добро пожаловать в FocusSync</h1>
-      <p>Выберите комнату для совместной фокусировки:</p>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+    <div>
+      <h2>Available Rooms</h2>
+      <ul>
         {rooms.map((room, index) => (
-          <li key={index} style={{ marginBottom: '10px' }}>
-            {/* Просто текст или любой другой элемент внутри Link */}
-            <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
-              {room}
+          <li key={index}>
+            <Link href={`/room?roomId=${room}`}>
+              {room} {/* Просто передаем текст напрямую в Link */}
             </Link>
           </li>
         ))}
@@ -22,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default RoomList;
