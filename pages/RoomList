@@ -10,7 +10,7 @@ const RoomList = () => {
       {rooms.map((room, index) => (
         <li key={index} style={{ marginBottom: '10px' }}>
           <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
-            {room}
+            {room} {/* Просто передаем текст напрямую в Link */}
           </Link>
         </li>
       ))}
