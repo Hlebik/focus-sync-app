@@ -1,15 +1,23 @@
 import React from 'react';
-import RoomList from '../components/RoomList';
-import Timer from '../components/Timer';
-import Chat from '../components/Chat';
+import Link from 'next/link';
 
 const Home = () => {
+  const rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5']; // Пример комнат
+
   return (
-    <div>
-      <h1>Welcome to FocusSync</h1>
-      <RoomList />
-      <Timer />
-      <Chat />
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>Добро пожаловать в FocusSync</h1>
+      <p>Выберите комнату для совместной фокусировки:</p>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {rooms.map((room, index) => (
+          <li key={index} style={{ marginBottom: '10px' }}>
+            <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
+              {/* Правильный способ — просто текст внутри Link */}
+              {room}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
