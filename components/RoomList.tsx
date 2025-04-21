@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const RoomList = () => {
-  const rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5']; // Пример списка комнат
+  const rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5'];
 
   return (
     <div>
@@ -10,6 +10,7 @@ const RoomList = () => {
       <ul>
         {rooms.map((room, index) => (
           <li key={index}>
+            {/* Никаких <a> внутри Link — просто передаем текст/элемент */}
             <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
               {room}
             </Link>
