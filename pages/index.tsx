@@ -11,8 +11,8 @@ const Home = () => {
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {rooms.map((room, index) => (
           <li key={index} style={{ marginBottom: '10px' }}>
+            {/* Просто текст или любой другой элемент внутри Link */}
             <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
-              {/* Правильный способ — просто текст внутри Link */}
               {room}
             </Link>
           </li>
