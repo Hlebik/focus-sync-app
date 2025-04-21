@@ -9,8 +9,8 @@ const RoomList = () => {
     <ul style={{ listStyle: 'none', padding: 0 }}>
       {rooms.map((room, index) => (
         <li key={index} style={{ marginBottom: '10px' }}>
-          <Link href={`/room?roomId=${encodeURIComponent(room)}`}>
-            {room} {/* Просто передаем текст напрямую в Link */}
+          <Link href={`/room?roomId=${encodeURIComponent(room)}`} legacyBehavior>
+            <a>{room}</a> {/* Вложенный <a> теперь разрешен с legacyBehavior */}
           </Link>
         </li>
       ))}
